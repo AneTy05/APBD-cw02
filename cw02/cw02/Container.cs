@@ -20,7 +20,7 @@ public class Container
         CurrentLoad = 0;
     }
     
-    public void Load(double weight)
+    public virtual void Load(double weight)
     {
         if (CurrentLoad + weight > MaxLoad)
             throw new InvalidOperationException($"Cannot load {weight}kg, max allowed: {MaxLoad - CurrentLoad}kg");
@@ -29,7 +29,7 @@ public class Container
         Console.WriteLine($"Loaded {weight}kg into {SerialNumber}. Current load: {CurrentLoad}kg.");
     }
     
-    public void Unload()
+    public virtual void Unload()
     {
         CurrentLoad = 0;
         Console.WriteLine($"Unloaded {SerialNumber}.");
